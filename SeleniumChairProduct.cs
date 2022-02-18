@@ -43,5 +43,3 @@ public class Test1Artikelnr323640SviveGeminiGamingstolMrkgrTest
         Assert.That(driver.FindElement(By.CssSelector(".px-5 > p:nth-child(3)")).Text, Is.EqualTo("Artikelnr: 323640"));
     }
 }
-
-//test made by proudpond
