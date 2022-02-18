@@ -24,7 +24,7 @@ public class Verifyitem333044shippingetcTest {
   }
   [TearDown]
   protected void TearDown() {
-    driver.Quit();
+        driver.Quit();
   }
   [Test]
   public void verifyitem333044shippingetc() {
@@ -42,5 +42,7 @@ public class Verifyitem333044shippingetcTest {
     driver.FindElement(By.CssSelector(".d-block:nth-child(3)")).Click();
     driver.FindElement(By.CssSelector(".stretch-y:nth-child(1)")).Click();
     Assert.That(driver.FindElement(By.CssSelector(".free-shipping-wrap > span")).Text, Is.Not.EqualTo("Should not be free shipping"));
-  }
+    driver.Manage().Cookies.DeleteAllCookies();
+    driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
+    }
 }
