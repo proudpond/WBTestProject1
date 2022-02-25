@@ -42,5 +42,9 @@ public class PlaceandremoveiteminshoppingcartTest {
     var elements = driver.FindElements(By.CssSelector(".level-two-heading"));
     Assert.True(elements.Count > 0);
     driver.FindElement(By.CssSelector(".glyphicon-remove")).Click();
-  }
+
+
+   driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
+   driver.Manage().Cookies.DeleteAllCookies();
+    }
 }
