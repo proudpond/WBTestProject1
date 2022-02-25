@@ -32,5 +32,9 @@ public class VerifytheiconforsecurepaymentsTest {
     driver.Manage().Window.Size = new System.Drawing.Size(1936, 1056);
     var elements = driver.FindElements(By.CssSelector(".icon-column:nth-child(2) > .ximg:nth-child(1) > .ximg-content"));
     Assert.True(elements.Count > 0);
-  }
+
+
+    driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
+    driver.Manage().Cookies.DeleteAllCookies();
+    }
 }
