@@ -41,5 +41,9 @@ public class Test1Artikelnr323640SviveGeminiGamingstolMrkgrTest
         driver.FindElement(By.CssSelector(".col-md-4 > .panel-thin .ximg")).Click();
         Assert.That(driver.FindElement(By.CssSelector("h1")).Text, Is.EqualTo("Svive Gemini Gamingstol - Mörkgrå"));
         Assert.That(driver.FindElement(By.CssSelector(".px-5 > p:nth-child(3)")).Text, Is.EqualTo("Artikelnr: 323640"));
+
+
+        driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
+        driver.Manage().Cookies.DeleteAllCookies();
     }
 }
