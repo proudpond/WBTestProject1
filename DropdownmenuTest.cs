@@ -107,5 +107,9 @@ public class DropdownmenuTest {
     }
     var elements10 = driver.FindElements(By.CssSelector(".root:nth-child(11) h2"));
     Assert.True(elements10.Count > 0);
-  }
+
+    driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
+    driver.Manage().Cookies.DeleteAllCookies();
+    
+    }
 }
