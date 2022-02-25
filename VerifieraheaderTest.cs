@@ -42,5 +42,9 @@ public class VerifieraheaderTest {
     Assert.True(elements4.Count > 0);
     var elements5 = driver.FindElements(By.CssSelector(".cart-header"));
     Assert.True(elements5.Count > 0);
-  }
+
+
+    driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
+    driver.Manage().Cookies.DeleteAllCookies();
+    }
 }
