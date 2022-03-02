@@ -35,6 +35,7 @@ public class PlaceandremoveiteminshoppingcartTest {
     driver.FindElement(By.CssSelector(".input-group > .form-control")).SendKeys(Keys.Enter);
     driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
     driver.FindElement(By.LinkText("Myriwell 3D-Print Penna för 1.75mm Filament med LCD - Blå")).Click();
+    driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
     driver.FindElement(By.CssSelector(".d-block:nth-child(3)")).Click();
     driver.FindElement(By.CssSelector(".stretch-y:nth-child(1)")).Click();
     Assert.That(driver.FindElement(By.LinkText("Myriwell 3D-Print Penna för 1.75mm Filament med LCD - Blå")).Text, Is.EqualTo("Myriwell 3D-Print Penna för 1.75mm Filament med LCD - Blå"));
