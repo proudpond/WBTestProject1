@@ -30,22 +30,20 @@ public class PlaceandremoveiteminshoppingcartTest {
   public void placeandremoveiteminshoppingcart() {
     driver.Navigate().GoToUrl("https://www.webhallen.com/");
     driver.Manage().Window.Size = new System.Drawing.Size(1936, 1056);
-    driver.FindElement(By.CssSelector(".input-group > .form-control")).Click();
-    driver.FindElement(By.CssSelector(".input-group > .form-control")).SendKeys("317284");
-    driver.FindElement(By.CssSelector(".input-group > .form-control")).SendKeys(Keys.Enter);
-    driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
-    driver.FindElement(By.LinkText("Myriwell 3D-Print Penna för 1.75mm Filament med LCD - Blå")).Click();
+    driver.FindElement(By.CssSelector(".form-control")).Click();
+    driver.FindElement(By.CssSelector(".form-control")).SendKeys("317284");
+    driver.FindElement(By.CssSelector(".form-control")).SendKeys(Keys.Enter);
     driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
-    driver.FindElement(By.CssSelector(".d-block:nth-child(3)")).Click();
-    driver.FindElement(By.CssSelector(".stretch-y:nth-child(1)")).Click();
-    Assert.That(driver.FindElement(By.LinkText("Myriwell 3D-Print Penna för 1.75mm Filament med LCD - Blå")).Text, Is.EqualTo("Myriwell 3D-Print Penna för 1.75mm Filament med LCD - Blå"));
-    driver.FindElement(By.CssSelector(".btn-default > .glyphicon")).Click();
-    var elements = driver.FindElements(By.CssSelector(".level-two-heading"));
-    Assert.True(elements.Count > 0);
+    driver.FindElement(By.LinkText("Myriwell 3D-Print Penna för 1.75mm Filament med LCD - Blå")).Click();
+    driver.FindElement(By.CssSelector(".\\_stretch")).Click();
+    driver.FindElement(By.XPath("/ html / body / div[2] / div[2] / div[1] / div[2] / div / header / div / div / div[4] / div / div / label / div")).Click();
+    Assert.That(driver.FindElement(By.CssSelector(".product-id > .product-list-subtitle")).Text, Is.EqualTo("Artikelnr: 317284"));
+    driver.FindElement(By.CssSelector(".btn-remove-item > .icon")).Click();
+    Assert.That(driver.FindElement(By.CssSelector(".level-two-heading")).Text, Is.EqualTo("Din varukorg är tom"));
     driver.FindElement(By.CssSelector(".glyphicon-remove")).Click();
 
-
-   driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
-   driver.Manage().Cookies.DeleteAllCookies();
+    driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
+    driver.Manage().Cookies.DeleteAllCookies();
     }
 }
+
