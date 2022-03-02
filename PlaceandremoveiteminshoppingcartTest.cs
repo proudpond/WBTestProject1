@@ -40,6 +40,7 @@ public class PlaceandremoveiteminshoppingcartTest {
     driver.FindElement(By.XPath("/html/body/div[2]/div[2]/div[1]/div[2]/div/header/div/div/div[4]/div/div/label/div")).Click();
     var elements = driver.FindElements(By.CssSelector(".compact-product-image .ximg-content"));
     Assert.True(elements.Count > 0);
+    driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
     driver.FindElement(By.CssSelector(".btn-remove-item > .icon")).Click();
     var elements1 = driver.FindElements(By.CssSelector(".level-two-heading"));
     Assert.True(elements1.Count > 0);
