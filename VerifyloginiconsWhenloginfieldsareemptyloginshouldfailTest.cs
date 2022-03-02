@@ -30,6 +30,8 @@ public class VerifyloginiconsWhenloginfieldsareemptyloginshouldfailTest {
   public void verifyloginiconsWhenloginfieldsareemptyloginshouldfail() {
     driver.Navigate().GoToUrl("https://www.webhallen.com/");
     driver.Manage().Window.Size = new System.Drawing.Size(1920, 1040);
+    //driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
+    //driver.FindElement(By.CssSelector(".text-btn:nth-child(1) > span")).Click();
     driver.FindElement(By.CssSelector("strong")).Click();
     var elements = driver.FindElements(By.CssSelector(".active > .form-control"));
     Assert.True(elements.Count > 0);

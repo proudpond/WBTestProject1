@@ -24,27 +24,24 @@ public class Verifyitem333044shippingetcTest {
   }
   [TearDown]
   protected void TearDown() {
-       driver.Quit();
+    driver.Quit();
   }
   [Test]
   public void verifyitem333044shippingetc() {
     driver.Navigate().GoToUrl("https://www.webhallen.com/");
     driver.Manage().Window.Size = new System.Drawing.Size(1920, 1040);
+    driver.FindElement(By.CssSelector(".text-btn:nth-child(1) > span")).Click();
     driver.FindElement(By.CssSelector(".input-group > .form-control")).Click();
     driver.FindElement(By.CssSelector(".input-group > .form-control")).SendKeys("333044");
     driver.FindElement(By.CssSelector(".input-group > .form-control")).SendKeys(Keys.Enter);
-    driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
+    driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
     driver.FindElement(By.LinkText("Xiaomi Mi Body Composition Scale 2")).Click();
     Assert.That(driver.FindElement(By.CssSelector("h1")).Text, Is.EqualTo("Xiaomi Mi Body Composition Scale 2"));
     Assert.That(driver.FindElement(By.CssSelector(".px-5 > p:nth-child(3)")).Text, Is.EqualTo("Artikelnr: 333044"));
     var elements = driver.FindElements(By.CssSelector(".ap-fill .ximg-content"));
     Assert.True(elements.Count > 0);
-    driver.FindElement(By.CssSelector(".d-block:nth-child(3)")).Click();
+    driver.FindElement(By.XPath("(//button[@type=\'button\'])[2]")).Click();
     driver.FindElement(By.CssSelector(".stretch-y:nth-child(1)")).Click();
-    Assert.That(driver.FindElement(By.CssSelector(".free-shipping-wrap > span")).Text, Is.Not.EqualTo("Should not be free shipping"));
-
-
-    driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
-    driver.Manage().Cookies.DeleteAllCookies();
-    }
+    Assert.That(driver.FindElement(By.XPath("//div[2]/div[3]/div/span")).Text, Is.Not.EqualTo("Fri frakt tillgängligt!"));
+  }
 }
