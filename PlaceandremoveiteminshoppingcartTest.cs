@@ -30,6 +30,7 @@ public class PlaceandremoveiteminshoppingcartTest {
   public void placeandremoveiteminshoppingcart() {
     driver.Navigate().GoToUrl("https://www.webhallen.com/");
     driver.Manage().Window.Size = new System.Drawing.Size(1936, 1056);
+    driver.FindElement(By.CssSelector(".text-btn:nth-child(1) > span")).Click();
     driver.FindElement(By.CssSelector(".form-control")).Click();
     driver.FindElement(By.CssSelector(".form-control")).SendKeys("276641");
     driver.FindElement(By.CssSelector(".form-control")).SendKeys(Keys.Enter);
