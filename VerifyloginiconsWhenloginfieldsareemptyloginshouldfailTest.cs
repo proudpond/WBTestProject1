@@ -42,6 +42,9 @@ public class VerifyloginiconsWhenloginfieldsareemptyloginshouldfailTest {
     {
       var elements3 = driver.FindElements(By.XPath("//header[@id=\'main-header\']/div/div/div[3]/div/div[3]/div/form/div/div[2]"));
       Assert.True(elements3.Count == 0);
-    }
+
+     driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
+     driver.Manage().Cookies.DeleteAllCookies();
+        }
   }
 }
