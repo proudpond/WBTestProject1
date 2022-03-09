@@ -1,1 +1,1 @@
-"C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\MSBuild.exe" "WBTestProject1/WBTestProject1.csproj" -property:Configuration=Debug
+"C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\MSBuild.exe" "WBTestProject1\WBTestProject1.csproj" -property:Configuration=Debug
